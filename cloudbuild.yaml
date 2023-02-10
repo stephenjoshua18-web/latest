@@ -1,8 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/frontend', '.']
-  env:
-  - 'CLOUDSDK_LOGGING_OPTIONS=CLOUD_LOGGING_ONLY'
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/frontend']
 - name: 'gcr.io/cloud-builders/kubectl'
@@ -10,3 +8,4 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=adiba'
+  - 'CLOUDSDK_LOGGING_OPTIONS=CLOUD_LOGGING_ONLY'
