@@ -1,0 +1,10 @@
+.editorconfig
+.eslintrc.js
+.gitignore
+Dockerfile
+tsconfig.json
+*.tgz
+jest.config.js
+prettier.config.js
+src/
+./index.js

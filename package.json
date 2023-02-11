@@ -1,0 +1,78 @@
+{
+  "name": "sample-pilet-service",
+  "version": "1.6.1",
+  "description": "Piral: Sample pilet feed service.",
+  "main": "dist",
+  "typings": "dist",
+  "homepage": "https://piral.io",
+  "scripts": {
+    "test:unit": "jest src",
+    "test:watch": "npm run test:unit -- --watch",
+    "test": "npm run lint && npm run test:unit",
+    "start": "node dist/cli.js",
+    "watch": "node index.js",
+    "lint": "eslint -c .eslintrc.js src/**/*.ts",
+    "prettier": "prettier --config prettier.config.js --write 'src/**/*.ts'",
+    "build": "tsc --project tsconfig.json",
+    "serve": "pm2-runtime dist/index.js"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "bin": {
+    "sample-pilet-service": "./dist/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:smapiot/sample-pilet-service.git"
+  },
+  "keywords": [
+    "piral",
+    "pilet",
+    "feed",
+    "service",
+    "sample"
+  ],
+  "author": {
+    "name": "smapiot",
+    "url": "https://smapiot.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/server": "^4.1.1",
+    "connect-busboy": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
+    "graphql-type-json": "^0.3.2",
+    "mime-types": "^2.1.35",
+    "pm2": "^5.2.2",
+    "response-time": "^2.3.2",
+    "tar": "^6.1.11"
+  },
+  "devDependencies": {
+    "@types/connect-busboy": "^0.0.3",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/graphql-type-json": "^0.3.0",
+    "@types/jest": "^27.5.2",
+    "@types/mime-types": "^2.1.1",
+    "@types/node": "^11.15.54",
+    "@types/response-time": "^2.3.5",
+    "@types/tar": "^4.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "dotenv": "^8.6.0",
+    "eslint": "^8.28.0",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-react": "^7.31.11",
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1",
+    "minimatch": "^3.1.2",
+    "prettier": "^1.19.1",
+    "ts-jest": "^27.1.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4"
+  }
+}
